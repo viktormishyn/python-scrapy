@@ -11,6 +11,11 @@ class WikipediaSpider(CrawlSpider):
 
     rules = [Rule(LinkExtractor(allow=r'wiki/((?!:).)*$'), callback='parse_info', follow=True)]
 
+    custom_settings = {
+        'FEED_URI': 'articles.csv',
+        'FEED_FORMAT': 'csv'
+    }
+
     def parse_info(self, response):
 
         article = Article()
