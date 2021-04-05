@@ -1,0 +1,7 @@
+scrapy startproject <project_name>
+
+scrapy genspider <spider_name> <web_address>
+
+scrapy runspider <spider_file>
+
+scrapy runspider wikipedia.py -o articles.csv -t csv -s CLOSESPIDER_PAGECOUNT=10
