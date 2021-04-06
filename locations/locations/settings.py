@@ -1,3 +1,9 @@
+SELENIUM_DRIVER_NAME = 'chrome'
+SELENIUM_DRIVER_EXECUTABLE_PATH = '/home/asdf/chromedriver'
+SELENIUM_DRIVER_ARGUMENTS = []
+# SELENIUM_DRIVER_ARGUMENTS = ['-headless']
+# '--headless' (browser doesn't pop up on the screen and runs in the background) if using chrome instead of firefox
+
 # Scrapy settings for locations project
 #
 # For simplicity, this file contains only settings considered important or
@@ -50,9 +56,9 @@ ROBOTSTXT_OBEY = True
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
-#DOWNLOADER_MIDDLEWARES = {
-#    'locations.middlewares.LocationsDownloaderMiddleware': 543,
-#}
+DOWNLOADER_MIDDLEWARES = {
+    'scrapy_selenium.SeleniumMiddleware': 800
+}
 
 # Enable or disable extensions
 # See https://docs.scrapy.org/en/latest/topics/extensions.html
